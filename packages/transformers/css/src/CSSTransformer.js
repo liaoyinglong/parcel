@@ -106,7 +106,7 @@ export default (new Transformer({
     asset.setBuffer(res.code);
 
     if (res.map != null) {
-      let vlqMap = JSON.parse(res.map.toString());
+      let vlqMap = JSON.parse(Buffer.from(res.map).toString());
       let map = new SourceMap(options.projectRoot);
       map.addVLQMap(vlqMap);
 
